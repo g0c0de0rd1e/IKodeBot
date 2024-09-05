@@ -21,13 +21,11 @@ async def main():
     logging.basicConfig(level=logging.INFO)
     await dp.start_polling(bot)
 
-@lru_cache(maxsize=128)
 @dp.message()
 async def start_message(message: types.Message):
     await message.answer(text.greet.format(name=message.from_user.full_name),
                          reply_markup=buttons.menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'back_to_menu')
 async def back_to_menu(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -37,7 +35,6 @@ async def back_to_menu(callback_query: types.CallbackQuery):
                            text.greet.format(name=callback_query.from_user.full_name),
                            reply_markup=buttons.menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'info')
 async def info(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -47,7 +44,6 @@ async def info(callback_query: types.CallbackQuery):
                            text.info.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'faq')
 async def faq(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -57,7 +53,6 @@ async def faq(callback_query: types.CallbackQuery):
                            text.faq.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'teachers')
 async def teachers(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -67,7 +62,6 @@ async def teachers(callback_query: types.CallbackQuery):
                            text.teachers.format(),
                            reply_markup=buttons.teachers)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'valera')
 async def valera(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -77,7 +71,6 @@ async def valera(callback_query: types.CallbackQuery):
                            text.valera.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'timur')
 async def timur(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -87,7 +80,6 @@ async def timur(callback_query: types.CallbackQuery):
                            text.timur.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'liza')
 async def liza(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -96,8 +88,7 @@ async def liza(callback_query: types.CallbackQuery):
     await bot.send_message(callback_query.from_user.id,
                            text.liza.format(),
                            reply_markup=buttons.back_to_menu)
-    
-@lru_cache(maxsize=128)
+     
 @dp.callback_query(F.data == 'aziz')
 async def aziz(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -107,7 +98,6 @@ async def aziz(callback_query: types.CallbackQuery):
                            text.aziz.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'sergey')
 async def sergey(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -117,7 +107,6 @@ async def sergey(callback_query: types.CallbackQuery):
                            text.sergey.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'modules')
 async def modules(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -127,7 +116,6 @@ async def modules(callback_query: types.CallbackQuery):
                            text.modules.format(),
                            reply_markup=buttons.modules)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'middle')
 async def middle(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -137,7 +125,6 @@ async def middle(callback_query: types.CallbackQuery):
                            text.middle.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'senior')
 async def senior(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -147,7 +134,6 @@ async def senior(callback_query: types.CallbackQuery):
                            text.senior.format(),
                            reply_markup=buttons.back_to_menu)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'suvorova')
 async def suvorova(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -157,7 +143,6 @@ async def suvorova(callback_query: types.CallbackQuery):
                            text.suvorova.format(),
                            reply_markup=buttons.suvorova)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'schedule')
 async def schedule(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -167,7 +152,6 @@ async def schedule(callback_query: types.CallbackQuery):
                            text.schedule.format(),
                            reply_markup=buttons.schedule)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'antichniy')
 async def antichniy(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -177,7 +161,6 @@ async def antichniy(callback_query: types.CallbackQuery):
                            text.antichniy.format(),
                            reply_markup=buttons.antichniy)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'ostryaki')
 async def ostryaki(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -187,7 +170,6 @@ async def ostryaki(callback_query: types.CallbackQuery):
                            text.ostryaki.format(),
                            reply_markup=buttons.ostryaki)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'suvsubota')
 async def suvsubota(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -197,7 +179,6 @@ async def suvsubota(callback_query: types.CallbackQuery):
                            text.suvsubota.format(),
                            reply_markup=buttons.suvsubota)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'suvvskr')
 async def suvvskr(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -207,7 +188,6 @@ async def suvvskr(callback_query: types.CallbackQuery):
                            text.suvvskr.format(),
                            reply_markup=buttons.suvvskr)
 
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'antsubota')
 async def antsubota(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -217,7 +197,6 @@ async def antsubota(callback_query: types.CallbackQuery):
                            text.antsubota.format(),
                            reply_markup=buttons.antsubota)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'antvskr')
 async def antvskr(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -227,7 +206,6 @@ async def antvskr(callback_query: types.CallbackQuery):
                            text.antvskr.format(),
                            reply_markup=buttons.antvskr)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'ostsubota')
 async def ostsubota(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -237,7 +215,6 @@ async def ostsubota(callback_query: types.CallbackQuery):
                            text.ostsubota.format(),
                            reply_markup=buttons.ostsubota)
     
-@lru_cache(maxsize=128)
 @dp.callback_query(F.data == 'ostvskr')
 async def ostvskr(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
@@ -246,8 +223,6 @@ async def ostvskr(callback_query: types.CallbackQuery):
     await bot.send_message(callback_query.from_user.id,
                            text.ostvskr.format(),
                            reply_markup=buttons.ostvskr)
-
-
 
 if __name__ == '__main__':
     asyncio.run(main())
