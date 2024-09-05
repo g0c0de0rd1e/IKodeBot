@@ -4,12 +4,18 @@ menu = [
     [InlineKeyboardButton(text='Информация 📚', callback_data='info'),
      InlineKeyboardButton(text='FAQ ❓', callback_data='faq'),
      InlineKeyboardButton(text='Модули 📖', callback_data='modules')],
-    [InlineKeyboardButton(text='Преподаватели 👩‍🏫👨‍🏫', callback_data='teachers'),
+    [InlineKeyboardButton(text='Администрация', callback_data='administration'),
+    InlineKeyboardButton(text='Преподаватели 👩‍🏫👨‍🏫', callback_data='teachers'),
      InlineKeyboardButton(text='Расписание 🗓️', callback_data='schedule')]
 ]
 
 back_to_menu = [
     [InlineKeyboardButton(text='Меню 🏠', callback_data='back_to_menu')]
+]
+
+administration = [
+    [InlineKeyboardButton(text='Ирина Тимуразовна', callback_data='irina'),
+    InlineKeyboardButton(text='Анна ', callback_data='anna')]
 ]
 
 teachers = [

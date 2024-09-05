@@ -53,6 +53,33 @@ async def faq(callback_query: types.CallbackQuery):
                            text.faq.format(),
                            reply_markup=buttons.back_to_menu)
     
+@dp.callback_query(F.data == 'administration')
+async def administration(callback_query: types.CallbackQuery):
+    await bot.delete_message(callback_query.from_user.id,
+                             callback_query.message.message_id)
+    await bot.answer_callback_query(callback_query.id)
+    await bot.send_message(callback_query.from_user.id,
+                           text.administration.format(),
+                           reply_markup=buttons.administration)
+    
+@dp.callback_query(F.data == 'anna')
+async def anna(callback_query: types.CallbackQuery):
+    await bot.delete_message(callback_query.from_user.id,
+                             callback_query.message.message_id)
+    await bot.answer_callback_query(callback_query.id)
+    await bot.send_message(callback_query.from_user.id,
+                           text.anna.format(),
+                           reply_markup=buttons.back_to_menu)
+    
+@dp.callback_query(F.data == 'irina')
+async def irina(callback_query: types.CallbackQuery):
+    await bot.delete_message(callback_query.from_user.id,
+                             callback_query.message.message_id)
+    await bot.answer_callback_query(callback_query.id)
+    await bot.send_message(callback_query.from_user.id,
+                           text.irina.format(),
+                           reply_markup=buttons.back_to_menu)
+    
 @dp.callback_query(F.data == 'teachers')
 async def teachers(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
