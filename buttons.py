@@ -105,7 +105,7 @@ ostvskr = [
 ]
 
 menu = InlineKeyboardMarkup(inline_keyboard=menu)
-menu = InlineKeyboardMarkup(inline_keyboard=back_to_menu)
+back_to_menu = InlineKeyboardMarkup(inline_keyboard=back_to_menu)
 teachers = InlineKeyboardMarkup(inline_keyboard=teachers)
 modules = InlineKeyboardMarkup(inline_keyboard=modules)
 schedule = InlineKeyboardMarkup(inline_keyboard=schedule)

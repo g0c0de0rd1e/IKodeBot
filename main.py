@@ -25,9 +25,9 @@ async def main():
 async def start_message(message: types.Message):
     await message.answer(text.greet.format(name=message.from_user.full_name),
                          reply_markup=buttons.menu)
-    
+
 @dp.callback_query(F.data == 'back_to_menu')
-async def back_to_menu(callback_query: types.CallbackQuery):
+async def menu(callback_query: types.CallbackQuery):
     await bot.delete_message(callback_query.from_user.id,
                              callback_query.message.message_id)
 
